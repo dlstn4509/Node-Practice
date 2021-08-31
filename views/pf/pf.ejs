@@ -5,18 +5,9 @@
   <section class="about-wrapper content-wrapper">
     <%- include('../inc/title-bar.ejs') %> 
     <div class="pf-wrap">
-      <div class="pf">
-        <img src="../img/f1.jpg" alt="me" class="w100">
-        <div class="title">1번</div>
-      </div>
-      <div class="pf">
-        <img src="../img/f2.jpg" alt="me" class="w100">
-        <div class="title">2번</div>
-      </div>
-      <div class="pf">
-        <img src="../img/f3.jpg" alt="me" class="w100">
-        <div class="title">3번</div>
-      </div>
+      <% for(let list of lists) { %>
+        <%- include('../components/list.ejs', {list}) %> 
+      <% } %> 
     </div>
   </section>
   <!-- 본문내용 끝 -->

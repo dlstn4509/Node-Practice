@@ -4,24 +4,11 @@
   <!-- 본문내용 시작 -->
   <section class="team-wrapper content-wrapper">
     <%- include('../inc/title-bar.ejs') %> 
-    <div class="sub-title"><%= subTitle %></div>
+    <h3 class="sub-title"><%= subTitle %></h3>
     <div class="team-wrap">
-      <div class="pf">
-        <img src="../img/team1.jpg" alt="me" class="w100">
-        <div class="title">1번</div>
-      </div>
-      <div class="pf">
-        <img src="../img/team2.jpg" alt="me" class="w100">
-        <div class="title">2번</div>
-      </div>
-      <div class="pf">
-        <img src="../img/team3.jpg" alt="me" class="w100">
-        <div class="title">3번</div>
-      </div>
-      <div class="pf">
-        <img src="../img/team4.jpg" alt="me" class="w100">
-        <div class="title">4번</div>
-      </div>
+      <% for(let list of lists) { %>
+        <%- include('../components/list.ejs', {list}) %> 
+      <% } %> 
     </div>
   </section>
   <!-- 본문내용 끝 -->
