@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>01.callback</title>
+</head>
+<body>
+	<form action="#" onsubmit="return send(this)">
+		<input type="text" name="userid" placeholder="아이디">
+		<input type="password" name="userpw" placeholder="패스워드">
+		<button>로그인</button>
+	</form>
+</body>
+</html>
+<script>
+	const users = [
+		{id: 1, userid: 'insu', userpw: '1111'},
+		{id: 2, userid: 'insu2', userpw: '2222'},
+  ]
+
+  function _isUser(userid, cb) {
+		setTimeout(function() {
+			var user = users.filter(function(v) {return v.userid === userid})
+			if (user.length === 0) cb('아이디를 찾을 수 없습니다.')
+			else cb(null, user[0].userid)
+		}, 100)
+	}
+
+  function isUser(userid, cb) {
+    return new Promise(function(resolve, reject) {
+		  setTimeout(function() {
+        var user = users.filter(function(v) {return (v.userid === userid)})
+        if (user.length === 0) reject('아이디를 찾을 수 없습니다.')
+        else resolve (user[0].userid)
+      }, 100)
+	  })
+  }
+
+  function send(f) {
+    isUser(f.userid.value) 
+    .then
+  }
+
+
+  	
+</script>

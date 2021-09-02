@@ -1,0 +1,18 @@
+<script>
+  const users = [
+    {id: 1, userid: 'insu', userpw: '1111'},
+    {id: 2, userid: 'insu2', userpw: '2222'},
+  ]
+
+  function isUser(id, pw) {
+    var result = users.filter(function(v) {
+      {return v.userid === id}
+    })
+    if (result.length === 0 || result[0].userid !== id) alert('id 확인하세요')
+    else if  (result[0].userpw !== pw) alert('pw 확인하세요')
+    else alert('로그인 성공')
+  }
+
+  isUser('insu', '1111')
+
+</script>
