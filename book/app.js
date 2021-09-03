@@ -29,9 +29,9 @@ app.use('/', express.static(path.join(__dirname, 'public')))
 
 
 /***************************** router init ********************/
-// const Router = require('./routes/')
+const bookRouter = require('./routes/book')
 
-// app.use('/', Router)
+app.use('/book', bookRouter)
 
 
 
